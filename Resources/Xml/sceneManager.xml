@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sceneManager>
+	<!-- IMPORTANT! toate tagurile si atributele de tip comment trebuie ignorate (nu le parsati)
+	le-am adaugat ca sa evit cazul de comentarii imbricate (imposibile in XML) -->
+	<gameName>My game engine</gameName>
+	<defaultScreenSize>
+		<width>960</width>
+		<height>720</height>
+		<!--
+		se mai poate pune si:
+		<fullscreen />
+		-->
+	</defaultScreenSize>
+	<backgroundColor>
+		<r>0.0</r>
+		<g>0.0</g>
+		<b>0.0</b>
+	</backgroundColor>
+	<controls>
+		<control>
+			<key>W</key>
+			<action>MOVE_CAMERA_POSITIVE_Z</action>
+		</control>
+		<control>
+			<key>S</key>
+			<action>MOVE_CAMERA_NEGATIVE_Z</action>
+		</control>
+		<!-- adaugati restul -->
+    
+	</controls>
+	
+	
+	<cameras>
+		<camera id="1">
+			<comment>elemntul type este folosit doar in taskul optional cu tipurile de Camera </comment>
+			<type>firstPerson</type>
+			<position>
+				<x>0</x>
+				<y>0</y>
+				<z>1</z>
+			</position>
+			<target>
+				<x>0</x>
+				<y>0</y>
+				<z>-1</z>
+			</target>
+			<up>
+				<x>0</x>
+				<y>1</y>
+				<z>0</z>
+			</up>
+			<translationSpeed>100</translationSpeed>
+			<rotationSpeed>2</rotationSpeed>
+			<fov>45</fov>
+			<near>0.2</near>
+			<far>10000</far>
+		</camera>
+		<!-- eventual si alte cameras -->
+	</cameras>
+	<activeCamera>1</activeCamera>
+
+	
+	<objects>
+		<comment>in interiorul elementelor model, shader, texture, se gaseste id-ul corespunzator resursei din sceneManager.xml
+		Elementul position se refera practic la translatia obiectului.
+		</comment>
+		<object id="1">
+			
+			<model>1</model>
+			<shader>1</shader>
+			<type>normal</type>
+			<name>Crocodil_verde</name>
+			<textures>
+				<texture id="1"/>
+			</textures>
+			<position>
+				<x>720</x>
+				<y>-140</y>
+				<z>0</z>
+			</position>
+			<rotation>
+				<x>0</x>
+				<y>2</y>
+				<z>0</z>
+			</rotation>
+			<scale>
+				<x>1.0</x>
+				<y>1.0</y>
+				<z>1.0</z>
+			</scale>
+      <lights>
+        <light>1</light>
+      </lights>
+			<!--
+			Exemple de alte configurari care vor fi adaugate si parsate mai tarziu (pentru taskuri ulterioare)
+			<followingCamera>
+				<cameras>
+					<camera>1</camera>
+				</cameras>
+				<ox/>
+				<oy/>
+				<oz/>
+			</followingCamera>
+			<trajectory type="linear" iteration="infinite" direction="alternate">
+				<comment>startPoint e chiar Pos</comment>
+				<endPoint>
+					<x>0.5</x>
+					<y>100.0</y>
+					<z>1.0</z>				
+				</endPoint>
+				<speed>0.1</speed>
+			</trajectory>
+			-->
+		</object>
+		
+    <object id="2">
+			
+			<model>2</model>
+			<shader>1</shader>
+			<type>normal</type>
+			<wired/>
+			<name>Mesh_minge</name>
+			<color>
+				<r>1.0</r>
+				<g>0.0</g>
+				<b>0.0</b>
+			</color>
+			<position>
+				<x>3.5</x>
+				<y>-50</y>
+				<z>-50</z>
+			</position>
+			<rotation>
+				<x>0</x>
+				<y>0</y>
+				<z>0</z>
+			</rotation>
+			<scale>
+				<x>1.0</x>
+				<y>1.0</y>
+				<z>1.0</z>
+			</scale>
+      <lights>
+        <light>1</light>
+      </lights>
+			<!--
+			Exemple de alte configurari care vor fi adaugate si parsate mai tarziu (pentru taskuri ulterioare)
+			<followingCamera>
+				<cameras>
+					<camera>1</camera>
+				</cameras>
+				<ox/>
+				<oy/>
+				<oz/>
+			</followingCamera>
+			<trajectory type="linear" iteration="infinite" direction="alternate">
+				<comment>startPoint e chiar Pos</comment>
+				<endPoint>
+					<x>0.5</x>
+					<y>100.0</y>
+					<z>1.0</z>				
+				</endPoint>
+				<speed>0.1</speed>
+			</trajectory>-->
+			
+		</object>
+
+    <object id="3">
+      <model>4</model>
+      <shader>3</shader>
+      <type>fire</type>
+      <name>Fire</name>
+      <dispMax>0.25</dispMax>
+      <textures>
+        <texture id="8"/>
+        <texture id="9"/>
+        <texture id="10"/>
+      </textures>
+      <position>
+        <x>700</x>
+        <y>-200</y>
+        <z>-350</z>
+      </position>
+      <rotation>
+        <x>0</x>
+        <y>6.28</y>
+        <z>0</z>
+      </rotation>
+      <scale>
+        <x>10</x>
+        <y>10</y>
+        <z>10</z>
+      </scale>
+      <lights>
+        <light>1</light>
+      </lights>
+    </object>
+		
+		<object id="4">
+			<model>generated</model>
+			<shader>2</shader>
+			<type>terrain</type>
+			<name>Teren</name>
+			<textures>
+				<texture id="2"/>
+				<texture id="3"/>
+				<!-- TO DO adaugati texturile-->
+        <texture id="4"/>
+        <texture id="5"/>
+       <texture id="6"/>
+			</textures>
+			<position>
+				<x>0</x>
+				<y>-200</y>
+				<z>0</z>
+			</position>
+			<rotation>
+				<x>0.0</x>
+				<y>0.0</y>
+				<z>0.0</z>
+			</rotation>
+			<scale>
+				<x>1.0</x>
+				<y>1.0</y>
+				<z>1.0</z>
+			</scale>
+      <nrCel>72</nrCel>
+      <dimCel>128</dimCel>
+      <inaltimi>
+        <r>-20</r>
+        <g>100</g>
+        <b>30</b>
+      </inaltimi>
+      <followingCamera>
+        <cameras>
+          <camera>1</camera>
+        </cameras>
+      </followingCamera>
+      <lights>
+        <light>1</light>
+      </lights>
+		</object>
+
+   <object id="5">
+      <model>5</model>
+      <shader>4</shader>
+      <type>SkyBox</type>
+      <name>SkyBox</name>
+      <followingCamera>
+        <ox/>
+        <oy/>
+        <oz/>
+      </followingCamera>
+      <textures>
+        <texture id="11"/>
+      </textures>
+      <position>
+        <x>0.0</x>
+        <y>38000.0</y>
+        <z>0.0</z>
+      </position>
+      <rotation>
+        <x>3.15*3.14</x>
+        <y>0.0</y>
+        <z>0.0</z>
+      </rotation>
+      <scale>
+        <x>4000</x>
+        <y>4000</y>
+        <z>4000</z>
+      </scale>
+     <lights>
+       <light>1</light>
+     </lights>
+    </object>
+    
+     <object id="6">
+
+    <model>2</model>
+    <shader>6</shader>
+    <type>normal</type>
+    <name>Mesh_minge cu reflexie totala</name>
+       <textures>
+         <texture id="11"/>
+       </textures>
+    <color>
+      <r>1.0</r>
+      <g>0.0</g>
+      <b>0.0</b>
+    </color>
+    <position>
+      <x>-100</x>
+      <y>0</y>
+      <z>20</z>
+    </position>
+    <rotation>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </rotation>
+    <scale>
+      <x>1.0</x>
+      <y>1.0</y>
+      <z>1.0</z>
+    </scale>
+    <lights>
+       <light>1</light>
+    </lights>
+    <!--
+			Exemple de alte configurari care vor fi adaugate si parsate mai tarziu (pentru taskuri ulterioare)
+			<followingCamera>
+				<cameras>
+					<camera>1</camera>
+				</cameras>
+				<ox/>
+				<oy/>
+				<oz/>
+			</followingCamera>
+			<trajectory type="linear" iteration="infinite" direction="alternate">
+				<comment>startPoint e chiar Pos</comment>
+				<endPoint>
+					<x>0.5</x>
+					<y>100.0</y>
+					<z>1.0</z>				
+				</endPoint>
+				<speed>0.1</speed>
+			</trajectory>-->
+  </object>
+
+    <object id="7">
+      <model>2</model>
+      <shader>6</shader>
+      <type>normal</type>
+      <name>Minge cu textura si reflexie</name>
+      <textures>
+        <texture id="7"/>
+        <texture id="11"/>
+      </textures>
+      <color>
+        <r>1.0</r>
+        <g>0.0</g>
+        <b>0.0</b>
+      </color>
+      <position>
+        <x>-1000.0</x>
+        <y>250.0</y>
+        <z>-250.0</z>
+      </position>
+      <rotation>
+        <x>0</x>
+        <y>0</y>
+        <z>0</z>
+      </rotation>
+      <scale>
+        <x>5.0</x>
+        <y>5.0</y>
+        <z>5.0</z>
+      </scale>
+    </object>
+
+   <object id ="8">
+      <model>6</model>
+      <shader>1</shader>
+      <type>normal</type>
+      <name>Witch</name>
+      <textures>
+        <texture id="12"></texture>
+      </textures>
+   <position>
+        <!-- translatia -->
+        <x>0</x>
+        <y>-200</y>
+        <z>0</z>
+      </position>
+      <rotation>
+        <x>0</x>
+        <y>6.28</y>
+        <z>0</z>
+      </rotation>
+      <scale>
+        <x>0.5</x>
+        <y>0.5</y>
+        <z>0.5</z>
+      </scale>
+      <selfRotateSpeed>0.1</selfRotateSpeed>
+      <followingCamera>
+        <cameras>
+          <camera>1</camera>
+        </cameras>
+        <ox/>
+        <oy/>
+        <oz/>
+      </followingCamera>
+      <trajectory type="circle" iteration="-1" direction="normal" speed="1">
+        <center>
+          <!-- observatie: puteti considera centrul sa fie pos-ul obiectului,
+sau puteti sa nu mai definiti pos pentru obiectele cu traiectorie, pentru a fi mai
+clar xml-ul -->
+          <x>0</x>
+          <y>-30</y>
+          <z>-350</z>
+        </center>
+        <radius>300</radius>
+        <rotationPlane>
+          <!-- elementele x,y,z cuprind aici unghiuri -->
+          <x>0</x>
+          <y>-200</y>
+          <z>0</z>
+        </rotationPlane>
+      </trajectory>
+      <lights>
+        <light>1</light>
+      </lights>
+    </object>
+
+    <object id="9">
+      <model>3</model>
+      <shader>1</shader>
+      <textures>
+        <texture id ="7"/>
+      </textures>
+      <type>normal</type>
+      <name>Bus</name>
+      <position>
+        <!-- translatia -->
+        <x>900</x>
+        <y>-220</y>
+        <z>1500</z>
+      </position>
+      <rotation>
+        <x>0</x>
+        <y>5</y>
+        <z>0</z>
+      </rotation>
+      <scale>
+        <x>1.7</x>
+        <y>1.7</y>
+        <z>1.7</z>
+      </scale>
+      <selfRotateSpeed>0.1</selfRotateSpeed>
+      <followingCamera>
+        <cameras>
+          <camera>1</camera>
+        </cameras>
+        <ox/>
+        <oy/>
+        <oz/>
+      </followingCamera>
+      <trajectory type="line_strip" iteration="1" direction="directional" speed="100">
+        <!-- startPoint e chiar Pos -->
+        <points>
+          <point>
+            <x>700</x>
+            <y>-205</y>
+            <z>400</z>
+          </point>
+        </points>
+      </trajectory>
+      <lights>
+        <light>1</light>
+      </lights>
+    </object>
+
+ <!--<object id="7">
+
+    <model>2</model>
+    <shader>1</shader>
+    <type>normal</type>
+    <wired/>
+    <name>Mesh_minge cu reflexie totala</name>
+    <color>
+      <r>1.0</r>
+      <g>0.0</g>
+      <b>0.0</b>
+    </color>
+    <position>
+      <x>3.5</x>
+      <y>0</y>
+      <z>20</z>
+    </position>
+    <rotation>
+      <x>0</x>
+      <y>0</y>
+      <z>0</z>
+    </rotation>
+    <scale>
+      <x>1.0</x>
+      <y>1.0</y>
+      <z>1.0</z>
+    </scale>
+ 
+			Exemple de alte configurari care vor fi adaugate si parsate mai tarziu (pentru taskuri ulterioare)
+			<followingCamera>
+				<cameras>
+					<camera>1</camera>
+				</cameras>
+				<ox/>
+				<oy/>
+				<oz/>
+			</followingCamera>
+			<trajectory type="linear" iteration="infinite" direction="alternate">
+				<comment>startPoint e chiar Pos</comment>
+				<endPoint>
+					<x>0.5</x>
+					<y>100.0</y>
+					<z>1.0</z>				
+				</endPoint>
+				<speed>0.1</speed>
+			</trajectory>
+			<lights>
+				<light>1</light>
+			</lights>
+
+  </object>-->
+
+	</objects>
+  
+  <!--
+	<ambientalLight>
+		<color>
+			<r>1.0</r>
+			<g>1.0</g>
+			<b>1.0</b>
+		</color>
+		<ratio>0.2</ratio>
+	</ambientalLight>
+	
+	<lights>
+		<light id="1">
+			<associatedObject>2</associatedObject>
+			<diffuseColor>
+				<r>1.0</r>
+				<g>1.0</g>
+				<b>1.0</b>
+			</diffuseColor>
+			<specularColor>
+				<r>1.0</r>
+				<g>1.0</g>
+				<b>1.0</b>
+			</specularColor>
+			<type>point</type>
+		</light>
+	</lights>
+	-->
+
+  <fog>
+    <color>
+      <r>0.74</r>
+      <g>0.74</g>
+      <b>0.82</b>
+    </color>
+    <r>1500</r>
+    <R>3000</R>
+    <Rfog>2500</Rfog>
+  </fog>
+
+  <lights>
+    <light id="0">
+      <type>point</type>
+      <associatedObject>2</associatedObject>
+      <position>
+        <x>-200</x>
+        <y>200</y>
+        <z>-900</z>
+      </position>
+      <ambiental>
+        <r>0.5</r>
+        <g>0.5</g>
+        <b>0.5</b>
+      </ambiental>
+      <diffuseColor>
+        <r>1.0</r>
+        <g>1.0</g>
+        <b>1.0</b>
+      </diffuseColor>
+      <specularColor>
+        <r>1.0</r>
+        <g>1.0</g>
+        <b>1.0</b>
+      </specularColor>
+      <specCoef>1.0</specCoef>
+      <specPower> 80.0</specPower>
+      <diffCoef>1.0</diffCoef>
+      <shininess>0.0</shininess>
+      <attenuation>0.0115</attenuation>
+      <ratio>0.2</ratio>
+    </light>
+  </lights>
+  
+	<debugSettings>
+		<objectAxes>
+			<OXColor>
+				<r>1.0</r>
+				<g>0.0</g>
+				<b>0.0</b>
+			</OXColor>
+			<OYColor>
+				<r>0.0</r>
+				<g>1.0</g>
+				<b>0.0</b>
+			</OYColor>
+			<OZColor>
+				<r>0.0</r>
+				<g>0.0</g>
+				<b>1.0</b>
+			</OZColor>
+		</objectAxes>
+		<camAxes>
+			<OXColor>
+				<r>1.0</r>
+				<g>1.0</g>
+				<b>0.0</b>
+			</OXColor>
+			<OYColor>
+				<r>0.0</r>
+				<g>1.0</g>
+				<b>1.0</b>
+			</OYColor>
+			<OZColor>
+				<r>1.0</r>
+				<g>0.0</g>
+				<b>1.0</b>
+			</OZColor>
+		</camAxes>
+	</debugSettings>
+	
+</sceneManager>
